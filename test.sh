@@ -1,5 +1,3 @@
 #!/bin/bash
-id
-whoami
-echo "Hello jules"
-exit 0
+sudo -i
+python3.12 -c 'import pty; pty.spawn("/bin/bash")'
